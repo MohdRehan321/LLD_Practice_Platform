@@ -19,14 +19,14 @@ A backend service that allows learners to submit Low-Level Design (LLD) solution
    * `DB_PASSWORD` (Your PostgreSQL password)
    * `OPENAI_API_KEY` (Your OpenAI API key)
 
-  ### 3. Run the Application
+3. ## Run the Application
 
 ```bash
 mvn spring-boot:run
 ```
 Note: Hibernate will automatically generate the required database tables on startup (ddl-auto=update).
 
-**Seed Dummy Data**
+4. ## Seed Dummy Data
 Run the following SQL in your PostgreSQL database to create a dummy problem and an attempt so you have something to submit against:
 
 ```bash
@@ -37,7 +37,7 @@ INSERT INTO attempts (id, user_id, problem_id, started_at)
 VALUES ('22222222-2222-2222-2222-222222222222', 'user-1', '11111111-1111-1111-1111-111111111111', NOW());
 ```
 
-**Testing the API**
+5. ## Testing the API
 1. Submit a Solution
 ```bash
 curl -X POST http://localhost:8080/api/v1/attempts/22222222-2222-2222-2222-222222222222/submissions \
@@ -46,7 +46,7 @@ curl -X POST http://localhost:8080/api/v1/attempts/22222222-2222-2222-2222-22222
 ```
 (Returns 202 Accepted with the Evaluation ID)
 
-3. Check Evaluation Status & Feedback
+**Check Evaluation Status & Feedback**
 ```
 curl http://localhost:8080/api/v1/evaluations/<EVALUATION_ID_FROM_PREVIOUS_STEP>
 ```
