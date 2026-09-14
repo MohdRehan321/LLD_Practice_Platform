@@ -38,7 +38,7 @@ VALUES ('22222222-2222-2222-2222-222222222222', 'user-1', '11111111-1111-1111-11
 ```
 
 5. ## Testing the API
-1. Submit a Solution
+Submit a Solution
 ```bash
 curl -X POST http://localhost:8080/api/v1/attempts/22222222-2222-2222-2222-222222222222/submissions \
 -H "Content-Type: application/json" \
